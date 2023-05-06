@@ -13,3 +13,92 @@
 body {
   background: #fff;
 }
+
+.whole-body {
+  padding: 10px 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dbdada;
+  padding: 3px 30px;
+}
+
+.logo {
+  color: #3e92db;
+  font-size: 28px;
+  font-weight: bolder;
+}
+
+#nav-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 5px;
+  color: #000;
+}
+
+.nav a:active,
+.nav a:focus {
+  color: #3e92db;
+}
+
+.outer-container {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #dbdada;
+  margin: 5px 10px;
+  padding: 5px 10px;
+}
+
+.inner-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons1 {
+  display: flex;
+  gap: 5px;
+}
+
+.bookmark {
+  display: flex;
+  padding: 3%;
+}
+
+.bookmark-progress {
+  transform: rotate(-90deg);
+  width: 10.25rem;
+  height: 10.25rem;
+}
+
+.bookmark-progress-gray {
+  fill: none;
+  stroke: #dbdada;
+  stroke-width: 6px;
+}
+
+.bookmark-progress-blue {
+  fill: none;
+  stroke: #3e92db;
+  stroke-width: 6px;
+  stroke-dasharray: 177, 277;
+  stroke-dashoffset: 0;
+  transition: stroke-dasharray 0.7s linear 0s;
+  -webkit-transition: stroke-dasharray 0.7s linear 0s;
+  -moz-transition: stroke-dasharray 0.7s linear 0s;
+  -ms-transition: stroke-dasharray 0.7s linear 0s;
+  -o-transition: stroke-dasharray 0.7s linear 0s;
+}
+
+.input-form {
+  display: flex;
+  margin: 5px 10px;
+  padding: 5px 10px;
+  gap: 5px;
+}
