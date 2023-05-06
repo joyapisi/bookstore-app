@@ -1,8 +1,17 @@
+import { Routes, Route } from 'react-router-dom';
+import Categories from './components/Categories';
+import Books from './components/Books';
+import Nav from './components/Nav';
+
 function App() {
   return (
-    <div>
-      Hello
-    </div>
+    <>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Books />} />
+        <Route path="Categories" element={<Categories />} />
+      </Routes>
+    </>
   );
 }
 
