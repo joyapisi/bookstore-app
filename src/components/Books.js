@@ -1,24 +1,15 @@
 import { useSelector } from 'react-redux';
+import EachBook from './EachBook';
 
 function Books() {
-  const { amount } = useSelector((store) => store.books.amount);
+  const { bookItems } = useSelector((store) => store.books.bookItems);
 
   return (
     <>
       <article className="whole-body">
-        <div className="amount">{amount}</div>
         <div className="outer-container">
-          <div className="inner-container">
-            <p>Action</p>
-            <h2>The Hunger Games</h2>
-            <p>Susan Collins</p>
-            <div className="buttons1">
-              <button type="button">Comments</button>
-              <button type="button">Remove</button>
-              <button type="button">Edit</button>
-            </div>
-          </div>
-
+          {bookItems.map((book) => (<EachBook key={bookItems.id} book={book} />
+          ))}
           <div className="bookmark">
             <svg className="bookmark-progress" xmlns="http://www.w3.org/2000/svg">
               <circle
