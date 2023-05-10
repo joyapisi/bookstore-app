@@ -112,10 +112,11 @@ nav a {
 form {
   display: flex;
   gap: 5%;
- width: 100%;
+  width: 100%;
 }
 
-form>input, button {
+form > input,
+button {
   width: 150px;
   padding: 5px;
   border: 1px solid #dbdada;
