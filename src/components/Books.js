@@ -1,7 +1,12 @@
+import { useSelector } from 'react-redux';
+
 function Books() {
+  const { amount } = useSelector((store) => store.books.amount);
+
   return (
     <>
       <article className="whole-body">
+        <div className="amount">{amount}</div>
         <div className="outer-container">
           <div className="inner-container">
             <p>Action</p>
