@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Categories from './components/Categories';
-import Books from './components/Books';
+import Books from './components/ListofBooks';
 import Nav from './components/Nav';
 
 function App() {
