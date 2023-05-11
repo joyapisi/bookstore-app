@@ -48,22 +48,26 @@ nav a {
   color: #3e92db;
 }
 
-.outer-container {
+.books-list {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  border: 1px solid #dbdada;
-  margin: 5px 10px;
+  gap: 10px;
+  margin: 20px 5px;
   padding: 5px 10px;
 }
 
 .inner-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  border: 1px solid #dbdada;
+  padding: 5px 10px;
 }
 
-.buttons1 {
+.buttons {
   display: flex;
   gap: 5px;
+  width: 10%;
 }
 
 .bookmark {
@@ -98,7 +102,22 @@ nav a {
 
 .input-form {
   display: flex;
+  flex-direction: column;
   margin: 5px 10px;
   padding: 5px 10px;
   gap: 5px;
+  border: 1px solid #dbdada;
+}
+
+form {
+  display: flex;
+  gap: 5%;
+  width: 100%;
+}
+
+form > input,
+button {
+  width: 150px;
+  padding: 5px;
+  border: 1px solid #dbdada;
 }
