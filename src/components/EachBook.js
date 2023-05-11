@@ -8,16 +8,24 @@ function EachBook({
   const dispatch = useDispatch();
   return (
     <>
-      <div className="inner-container">
-        <p>{category}</p>
-        <h2>{title}</h2>
-        <p>{author}</p>
-        <div className="buttons">
-          <button type="button">Comments</button>
-          <button type="button" onClick={() => dispatch(removeBook(id))}>Remove</button>
-          <button type="button">Edit</button>
+      <section className="inner-container">
+        <div id="each-book">
+          <p>{category}</p>
+          <h2>{title}</h2>
+          <p>{author}</p>
+          <div className="buttons">
+            <button type="button">Comments</button>
+            <button type="button" onClick={() => dispatch(removeBook(id))}>Remove</button>
+            <button type="button">Edit</button>
+          </div>
         </div>
-      </div>
+        <div>
+          part2
+        </div>
+        <div>
+          part3
+        </div>
+      </section>
     </>
   );
 }
