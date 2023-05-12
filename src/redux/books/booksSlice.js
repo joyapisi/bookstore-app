@@ -4,7 +4,7 @@ import axios from 'axios';
 const appId = 'm5VanncxBlzO2m73NS26';
 const baseUrl = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books`;
 const initialState = {
-  bookItems: [],
+  bookItems: {},
   title: '',
   author: '',
   error: undefined,
@@ -64,7 +64,7 @@ export const booksSlice = createSlice({
       })
       .addCase(fetchBook.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.books = action.payload;
+        state.bookItems = action.payload;
       })
       .addCase(fetchBook.rejected, (state, action) => {
         state.isLoading = false;

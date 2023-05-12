@@ -57,9 +57,14 @@ nav a {
   padding: 5px 10px;
 }
 
+.box{
+  padding: 10px;
+  align-items: center;
+}
+
 .inner-container {
   display: grid;
-  grid-template-columns: repeat(3, 35%);
+  grid-template-columns: repeat(3, 250px);
   border: 1px solid #dbdada;
   padding: 5px 10px;
 }
@@ -98,6 +103,11 @@ nav a {
   -moz-transition: stroke-dasharray 0.7s linear 0s;
   -ms-transition: stroke-dasharray 0.7s linear 0s;
   -o-transition: stroke-dasharray 0.7s linear 0s;
+}
+
+.current-chapter {
+  display: flex;
+  flex-direction: column;
 }
 
 .input-form {

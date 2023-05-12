@@ -7,7 +7,7 @@ function EachBook({ title, author, id }) {
 
   return (
     <>
-      <section className="inner-container">
+      <section className="box inner-container">
         <div id="each-book">
           <p>category</p>
           <h2>{title}</h2>
@@ -18,12 +18,37 @@ function EachBook({ title, author, id }) {
             <button type="button">Edit</button>
           </div>
         </div>
-        <div>
-          part2
+
+        <div className="box bookmark">
+          <svg
+            className="bookmark-progress"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              className="bookmark-progress-gray"
+              cx="111"
+              cy="100"
+              r="44"
+            />
+            <circle
+              className="bookmark-progress-blue"
+              cx="111"
+              cy="100"
+              r="44"
+            />
+          </svg>
+          <div className="percentage-complete">
+            <h1 className="percent">64%</h1>
+            <p className="state">Completed</p>
+          </div>
         </div>
-        <div>
-          part3
+
+        <div className="box current-chapter">
+          <p>CURRENT CHAPTER</p>
+          <p>Chapter 17</p>
+          <button type="button">UPDATE PROGRESS</button>
         </div>
+
       </section>
     </>
   );

@@ -7,9 +7,10 @@ import {
 } from '../redux/books/booksSlice';
 
 function ListofBooks() {
-  const { bookItems, isLoading, error } = useSelector((store) => store.books);
+  const {
+    bookItems, isLoading, error, title, author, count,
+  } = useSelector((store) => store.books);
   const dispatch = useDispatch();
-  const { title, author } = useSelector((store) => store.books);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +27,7 @@ function ListofBooks() {
 
   useEffect(() => {
     dispatch(fetchBook());
-  }, [dispatch]);
+  }, [dispatch, count]);
 
   const booksLoading = isLoading && <p>Books Loading...</p>;
   const errorMsg = error && <p>Oops! Something went wrong. Reload your page</p>;
