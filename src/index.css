@@ -57,9 +57,14 @@ nav a {
   padding: 5px 10px;
 }
 
+.box {
+  padding: 10px;
+  align-items: center;
+}
+
 .inner-container {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 250px);
   border: 1px solid #dbdada;
   padding: 5px 10px;
 }
@@ -68,6 +73,8 @@ nav a {
   display: flex;
   gap: 5px;
   width: 10%;
+  background-color: transparent;
+  color: rgb(53, 128, 226);
 }
 
 .bookmark {
@@ -100,11 +107,16 @@ nav a {
   -o-transition: stroke-dasharray 0.7s linear 0s;
 }
 
+.current-chapter {
+  display: flex;
+  flex-direction: column;
+}
+
 .input-form {
   display: flex;
   flex-direction: column;
   margin: 5px 10px;
-  padding: 5px 10px;
+  padding: 15px 10px;
   gap: 5px;
   border: 1px solid #dbdada;
 }
@@ -120,4 +132,8 @@ button {
   width: 150px;
   padding: 5px;
   border: 1px solid #dbdada;
+}
+
+form > button {
+  background-color: rgb(53, 128, 226);
 }
