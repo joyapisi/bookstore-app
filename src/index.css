@@ -131,3 +131,7 @@ button {
   padding: 5px;
   border: 1px solid #dbdada;
 }
+
+button {
+  background-color: rgb(53, 128, 226);
+}
