@@ -69,7 +69,7 @@ nav a {
 .inner-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 15px;  
+  gap: 15px;
   border: 1px solid #dbdada;
   padding: 20px;
   justify-content: center;
@@ -78,7 +78,7 @@ nav a {
 .box {
   padding: 5px 15px;
   align-items: center;
-} 
+}
 
 .grey {
   color: grey;
@@ -105,12 +105,6 @@ nav a {
 .margin-buttons {
   margin-top: 20px;
 }
-
-.buttons> button{
-  background-color: transparent;
-  color: #3e92db;
-}   
-
 
 .bookmark {
   display: flex;
@@ -142,7 +136,7 @@ nav a {
   -o-transition: stroke-dasharray 0.7s linear 0s;
 }
 
-.percentage-complete{
+.percentage-complete {
   padding: 0;
 }
 
@@ -168,14 +162,18 @@ form {
   width: 100%;
 }
 
-form>input {
+form > input {
   font-size: 16px;
 }
 
-form > input,
-button {
+form > button,
+form > input {
   width: 150px;
   padding: 5px;
   border: 1px solid #dbdada;
 }
 
+.buttons > button {
+  background-color: transparent;
+  color: #3e92db;
+}
