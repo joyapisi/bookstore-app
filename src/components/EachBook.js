@@ -11,34 +11,20 @@ function EachBook({
     <>
       <section className="inner-container">
         <div id="box each-book">
-          <p className="grey">category</p>
-          <h2>{book.title}</h2>
-          <p className="author">{book.author}</p>
+          <span className="School-of">category</span>
+          <span className="Title book-title">{book.title}</span>
+          <span className="author">{book.author}</span>
           <div className="margin-buttons buttons">
             <button type="button">Comments</button>
+            <span className="grey divider"> | </span>
             <button type="button" onClick={() => { dispatch(removeBook(id)); }}>Remove</button>
+            <span className="grey divider"> | </span>
             <button type="button">Edit</button>
           </div>
         </div>
 
         <div className="box bookmark">
-          <svg
-            className="bookmark-progress"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              className="bookmark-progress-gray"
-              cx="111"
-              cy="100"
-              r="44"
-            />
-            <circle
-              className="bookmark-progress-blue"
-              cx="111"
-              cy="100"
-              r="44"
-            />
-          </svg>
+          <div className="oval" />
           <div className="percentage-complete">
             <h1 className="percent">64%</h1>
             <p className="state">Completed</p>

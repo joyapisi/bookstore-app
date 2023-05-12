@@ -26,10 +26,11 @@ React JS Project
 
 # 📖 [Bookstore_App] <a name="Bookstore_App"></a>
 
-**[Bookstore_App]** "Bookstore App" is a web app for all fans of mathematics. It is a Single Page App (SPA) that allows users to:
-- Make simple calculations.
-- Read a random math-related quote.
-By building this application, you will learn how to use React. It also follows <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Gitflow.</a>
+**[Bookstore_App]** "Bookstore App" is a web app for all fans of books. It is a Single Page App (SPA) that allows users to:
+- Display a list of books
+- Add a book
+- Remove a selected book
+By building this application, you will learn how to use React and Redux. It also follows <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Gitflow.</a>
 
 ## 🛠 Built With <a name="built-with"></a>
 
