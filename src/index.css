@@ -14,7 +14,16 @@ body {
   background: #fff;
 }
 
-.whole-body {
+button {
+  background-color: rgb(53, 128, 226);
+  color: #fff;
+}
+
+p {
+  font-size: 14px;
+}
+
+#root {
   padding: 10px 20px;
 }
 
@@ -57,23 +66,51 @@ nav a {
   padding: 5px 10px;
 }
 
-.box {
-  padding: 10px;
-  align-items: center;
-}
-
 .inner-container {
   display: grid;
-  grid-template-columns: repeat(3, 250px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;  
   border: 1px solid #dbdada;
-  padding: 5px 10px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.box {
+  padding: 5px 15px;
+  align-items: center;
+} 
+
+.grey {
+  color: grey;
+}
+
+.each-book {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.author {
+  color: #3e92db;
 }
 
 .buttons {
   display: flex;
-  gap: 5px;
-  width: 10%;
+  justify-content: space-between;
+  gap: 10px;
+  width: 70%;
 }
+
+.margin-buttons {
+  margin-top: 20px;
+}
+
+.buttons> button{
+  background-color: transparent;
+  color: #3e92db;
+}   
+
 
 .bookmark {
   display: flex;
@@ -105,15 +142,21 @@ nav a {
   -o-transition: stroke-dasharray 0.7s linear 0s;
 }
 
+.percentage-complete{
+  padding: 0;
+}
+
 .current-chapter {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .input-form {
   display: flex;
   flex-direction: column;
-  margin: 5px 10px;
+  margin: 15px 10px;
   padding: 15px 10px;
   gap: 5px;
   border: 1px solid #dbdada;
@@ -125,6 +168,10 @@ form {
   width: 100%;
 }
 
+form>input {
+  font-size: 16px;
+}
+
 form > input,
 button {
   width: 150px;
@@ -132,6 +179,3 @@ button {
   border: 1px solid #dbdada;
 }
 
-button {
-  background-color: rgb(53, 128, 226);
-}

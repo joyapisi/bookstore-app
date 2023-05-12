@@ -2,17 +2,19 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/booksSlice';
 
-function EachBook({ title, author, id }) {
+function EachBook({
+  book, id,
+}) {
   const dispatch = useDispatch();
 
   return (
     <>
-      <section className="box inner-container">
-        <div id="each-book">
-          <p>category</p>
-          <h2>{title}</h2>
-          <p>{author}</p>
-          <div className="buttons">
+      <section className="inner-container">
+        <div id="box each-book">
+          <p className="grey">category</p>
+          <h2>{book.title}</h2>
+          <p className="author">{book.author}</p>
+          <div className="margin-buttons buttons">
             <button type="button">Comments</button>
             <button type="button" onClick={() => { dispatch(removeBook(id)); }}>Remove</button>
             <button type="button">Edit</button>
@@ -44,9 +46,9 @@ function EachBook({ title, author, id }) {
         </div>
 
         <div className="box current-chapter">
-          <p>CURRENT CHAPTER</p>
-          <p>Chapter 17</p>
-          <button type="button">UPDATE PROGRESS</button>
+          <h5 className="grey">CURRENT CHAPTER</h5>
+          <h5>Chapter 17</h5>
+          <button className="margin-buttons" type="button">UPDATE PROGRESS</button>
         </div>
 
       </section>
@@ -57,6 +59,7 @@ EachBook.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  book: PropTypes.string.isRequired,
 };
 
 export default EachBook;
