@@ -3,14 +3,15 @@ import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/booksSlice';
 
 function EachBook({
-  title, author, category, id,
+  title, author, id, removeBook,
 }) {
   const dispatch = useDispatch();
+
   return (
     <>
       <section className="inner-container">
         <div id="each-book">
-          <p>{category}</p>
+          <p>category</p>
           <h2>{title}</h2>
           <p>{author}</p>
           <div className="buttons">
@@ -32,7 +33,7 @@ function EachBook({
 EachBook.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
+  removeBook: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
 };
 

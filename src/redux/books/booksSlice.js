@@ -1,9 +1,19 @@
 import { createSlice, createAsyncThunk, isRejectedWithValue } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const Base_URL="..."
+// fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/', {
+//   method: 'POST',
+// })
+//   .then((response) => response.json())
+//   .then((data) => {
+//     const appId = data;
+//     console.log(appId); // unique identifier for the newly created app
+//   });
+
+const appId = '';
+const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books';
 const initialState = {
-  bookItems: {},
+  bookItems: [],
   title: '',
   author: '',
   error: undefined,
@@ -13,7 +23,7 @@ const initialState = {
 
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   try {
-    const response = await axios.get(Base_URL);
+    const response = await axios.get(baseUrl);
     return response.data;
   } catch (error) {
     return isRejectedWithValue(error.response.data);
@@ -22,7 +32,7 @@ export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
 
 export const postBook = createAsyncThunk('books/postBook', async (newBook) => {
   try {
-    const response = await axios.post(Base_URL, newBook);
+    const response = await axios.post(baseUrl, newBook);
     return response.data;
   } catch (error) {
     return isRejectedWithValue(error.response.data);
@@ -31,7 +41,7 @@ export const postBook = createAsyncThunk('books/postBook', async (newBook) => {
 
 export const removeBook = createAsyncThunk('books/removeBook', async (id) => {
   try {
-    const response = await axios.delete(`${Base_URL}/${id}`);
+    const response = await axios.delete(`${baseUrl}/${id}`);
     return response.data;
   } catch (error) {
     return isRejectedWithValue(error.response.data);

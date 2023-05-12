@@ -1,13 +1,20 @@
-import { useState, React } from 'react';
+import { useState, useEffect, React } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import EachBook from './EachBook';
-import { addBook } from '../redux/books/booksSlice';
+import { fetchBooks } from '../redux/books/booksSlice';
 
 function ListofBooks() {
-  const { bookItems } = useSelector((store) => store.books);
+  const { bookItems, isLoading, error } = useSelector((store) => store.books);
 
   const [values, setValue] = useState({});
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch, error]);
+
+  const booksLoading = isLoading && <p>Books Loading...</p>;
+  const errorMsg = error && <p>Oops! Something went wrong. Reload your page</p>;
 
   function handleChange(e) {
     const { name } = e.target;
@@ -19,12 +26,14 @@ function ListofBooks() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(addBook(values));
+    dispatch(fetchBooks(values));
     setValue({});
   }
 
   return (
     <>
+      {booksLoading}
+      {errorMsg}
       <div className="books-list">
         {bookItems.map((book) => (
           <>
@@ -32,7 +41,6 @@ function ListofBooks() {
               key={book.item_id}
               title={book.title}
               author={book.author}
-              category={book.category}
               id={book.item_id}
             />
           </>
