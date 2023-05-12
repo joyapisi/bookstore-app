@@ -1,17 +1,8 @@
 import { createSlice, createAsyncThunk, isRejectedWithValue } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/', {
-//   method: 'POST',
-// })
-//   .then((response) => response.json())
-//   .then((data) => {
-//     const appId = data;
-//     console.log(appId); // unique identifier for the newly created app
-//   });
-
-const appId = '';
-const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books';
+const appId = 'm5VanncxBlzO2m73NS26';
+const baseUrl = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books`;
 const initialState = {
   bookItems: [],
   title: '',
@@ -21,7 +12,7 @@ const initialState = {
   count: 0,
 };
 
-export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
+export const fetchBook = createAsyncThunk('books/fetchBook', async () => {
   try {
     const response = await axios.get(baseUrl);
     return response.data;
@@ -68,14 +59,14 @@ export const booksSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
-      .addCase(fetchBooks.pending, (state) => {
+      .addCase(fetchBook.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(fetchBooks.fulfilled, (state, action) => {
+      .addCase(fetchBook.fulfilled, (state, action) => {
         state.isLoading = false;
         state.books = action.payload;
       })
-      .addCase(fetchBooks.rejected, (state, action) => {
+      .addCase(fetchBook.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })

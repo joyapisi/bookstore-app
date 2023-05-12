@@ -2,9 +2,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/booksSlice';
 
-function EachBook({
-  title, author, id, removeBook,
-}) {
+function EachBook({ title, author, id }) {
   const dispatch = useDispatch();
 
   return (
@@ -16,7 +14,7 @@ function EachBook({
           <p>{author}</p>
           <div className="buttons">
             <button type="button">Comments</button>
-            <button type="button" onClick={() => dispatch(removeBook(id))}>Remove</button>
+            <button type="button" onClick={() => { dispatch(removeBook(id)); }}>Remove</button>
             <button type="button">Edit</button>
           </div>
         </div>
@@ -33,7 +31,6 @@ function EachBook({
 EachBook.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  removeBook: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
 };
 
