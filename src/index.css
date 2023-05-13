@@ -62,11 +62,12 @@ nav a {
   display: flex;
   align-items: flex-end;
   border-radius: 50%;
+  background-image: url("http://www.w3.org/2000/svg");
   color: rgb(55, 156, 246);
   width: 2.813rem;
   height: 2.813rem;
   padding: 0.875rem;
-  margin-right: 65%;
+  margin-right: 25%;
   border: solid 1px #e8e8e8;
 }
 
