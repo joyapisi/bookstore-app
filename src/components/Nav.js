@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 function Nav() {
   return (
-    <nav>
+    <nav className="flex">
       <a className="logo flex" id="montserrat" href="/">BOOKSTORE CMS</a>
       <NavLink to="/" id="montserrat">Books</NavLink>
       <NavLink to="/Categories" id="montserrat">Categories</NavLink>
