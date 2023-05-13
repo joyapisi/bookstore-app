@@ -20,7 +20,7 @@ button {
   padding: 0;
 }
 
-#roboto{
+#roboto {
   font-family: 'RobotoSlab', sans-serif;
 }
 
@@ -160,7 +160,7 @@ nav a {
 
 .bookmark {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2%;
 }
 
@@ -245,10 +245,8 @@ form > select {
   height: 40px;
   width: 30%;
   border: 1px solid #dbdada;
-
   font-family: Montserrat;
   font-size: 1rem;
- 
   letter-spacing: -0.15px;
   color: var(--very-light-pink);
 }
@@ -283,4 +281,3 @@ form > select {
   font-size: 0.875rem;
   font-weight: 300;
 }
-
