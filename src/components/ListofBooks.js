@@ -1,55 +1,71 @@
-import { useState, React } from 'react';
+import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { v1 as uuidv1 } from 'uuid';
 import EachBook from './EachBook';
-import { addBook } from '../redux/books/booksSlice';
+import {
+  fetchBook, postBook, newTitle, newAuthor,
+} from '../redux/books/booksSlice';
 
 function ListofBooks() {
-  const { bookItems } = useSelector((store) => store.books);
-
-  const [values, setValue] = useState({});
+  const {
+    bookItems, isLoading, error, title, author, count,
+  } = useSelector((store) => store.books);
   const dispatch = useDispatch();
 
-  function handleChange(e) {
-    const { name } = e.target;
-    const { value } = e.target;
-    setValue((values) => ({
-      ...values, item_id: crypto.randomUUID(), [name]: value,
-    }));
-  }
-
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addBook(values));
-    setValue({});
-  }
+
+    const addBook = {
+      item_id: uuidv1(),
+      category: 'Action',
+      title,
+      author,
+    };
+
+    dispatch(postBook(addBook));
+  };
+
+  useEffect(() => {
+    dispatch(fetchBook());
+  }, [dispatch, count]);
+
+  const booksLoading = isLoading && <p>Books Loading...</p>;
+  const errorMsg = error && <p>Oops! Something went wrong. Reload your page</p>;
 
   return (
     <>
-      <div className="books-list">
-        {bookItems.map((book) => (
-          <>
-            <EachBook
-              key={book.item_id}
-              title={book.title}
-              author={book.author}
-              category={book.category}
-              id={book.item_id}
-            />
-          </>
-        ))}
+      <div className="books-list flex">
+        {booksLoading}
+        {errorMsg}
+        <>
+          {Object.keys(bookItems).length === 0
+          && !{ booksLoading }}
+
+          {Object.keys(bookItems).map((key) => {
+            const book = bookItems[key][0];
+            return (
+              <EachBook
+                key={key}
+                book={book}
+                id={key}
+              />
+            );
+          })}
+        </>
       </div>
 
-      <div className="input-form">
-        <h1>ADD NEW BOOK</h1>
-        <form>
-          <input value={values.title || ''} type="text" name="title" placeholder="Book title" onChange={handleChange} />
-          <input value={values.author || ''} type="text" name="author" placeholder="Book author" onChange={handleChange} />
-          <select name="text" placeholder="Category">
-            <option value="category"> Category </option>
+      <div className="flex input-form">
+        <h1 className="Title grey" id="montserrat">ADD NEW BOOK</h1>
+        <form className="flex" onSubmit={handleSubmit}>
+          <input className="input-title" id="montserrat" value={title} type="text" name="title" placeholder="Book title" onChange={(e) => dispatch(newTitle(e.target.value))} required />
+          <input className="input-author" id="montserrat" value={author} type="text" name="author" placeholder="Author" onChange={(e) => dispatch(newAuthor(e.target.value))} required />
+          <select className="category-option" name="text" placeholder="Category">
+            <option value="category" id="montserrat"> Category </option>
           </select>
-          <button id="Add Button" type="button" onClick={handleSubmit}>ADD BOOK</button>
+          <button className="blue-buttons add-button" id="roboto" type="button" onClick={handleSubmit}>ADD BOOK</button>
         </form>
       </div>
+
     </>
   );
 }
