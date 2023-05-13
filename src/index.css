@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans&family=Montserrat&family=Puritan&family=Roboto:wght@100;400&display=swa');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans&family=Montserrat&family=Puritan&family=Roboto+Slab&family=Roboto:wght@100;400&display=swap');
 
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: 'Comic Neue', cursive;
   margin: 0;
   border: 0;
 }
@@ -17,10 +17,15 @@ body {
 button {
   background-color: rgb(53, 128, 226);
   color: #fff;
+  padding: 0;
 }
 
-p {
-  font-size: 14px;
+#roboto{
+  font-family: 'RobotoSlab', sans-serif;
+}
+
+#montserrat {
+  font-family: 'Montserrat', sans-serif;
 }
 
 #root {
@@ -29,21 +34,17 @@ p {
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   border-bottom: 1px solid #dbdada;
   padding: 3px 30px;
 }
 
 .logo {
-  color: #3e92db;
-  font-size: 28px;
-  font-weight: bolder;
-}
-
-#nav-box {
-  display: flex;
-  justify-content: space-between;
+  width: 30%;
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #0290ff;
 }
 
 nav a {
@@ -55,6 +56,18 @@ nav a {
 .nav a:active,
 .nav a:focus {
   color: #3e92db;
+}
+
+#icon {
+  display: flex;
+  align-items: flex-end;
+  border-radius: 50%;
+  color: rgb(55, 156, 246);
+  width: 2.813rem;
+  height: 2.813rem;
+  padding: 0.875rem;
+  margin-right: 65%;
+  border: solid 1px #e8e8e8;
 }
 
 .books-list {
@@ -87,32 +100,23 @@ nav a {
 .each-book {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
+  align-items: flex-start;
+  gap: 2px;
 }
 
-.School-of {
-  width: 4.313rem;
-  height: 1.125rem;
-  margin: 0 1.188rem 0 0;
+.category {
+  width: 7rem;
+  height: 25px;
   opacity: 0.5;
-  font-family: Montserrat;
   font-size: 0.875rem;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #121212;
+  border: none;
 }
 
 .Title {
-  font-family: RobotoSlab, sans-serif;
   font-size: 1.375rem;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: -0.2px;
 }
 
@@ -120,52 +124,51 @@ nav a {
   color: #121212;
   width: 22.813rem;
   height: 1.813rem;
-  margin: 0.188rem 9.688rem 0 0;
 }
 
 .author {
   width: 5.813rem;
   height: 1.188rem;
-  margin: 0.25rem 0.875rem 0 0;
-  font-family: RobotoSlab;
   font-size: 0.875rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #4386bf;
 }
 
 .buttons {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  width: 70%;
+  gap: 15px;
+  width: 60%;
+  margin-top: 15px;
 }
 
-.margin-buttons {
+.progress-btn {
+  width: 11.5rem;
+  height: 2.063rem;
+  border-radius: 3px;
+  font-size: 0.813rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
   margin-top: 20px;
 }
 
+.divider {
+  width: 0.125rem;
+  height: 1.5rem;
+  border: solid 1px #e8e8e8;
+}
+
 .bookmark {
-  display: flex;
-  padding: 3%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));;
+  gap: 2%;
 }
 
-.oval {
-  width: 4.25rem;
-  height: 4.25rem;
-  border-style: solid;
-  border-width: 5px;
-  border-image-source: linear-gradient(to bottom, var(--medium-blue), #379cf6);
-  border-image-slice: 1;
-}
-
-/* .bookmark-progress {
+.bookmark-progress {
   transform: rotate(-90deg);
   width: 10.25rem;
   height: 10.25rem;
+  margin: 0;
 }
 
 .bookmark-progress-gray {
@@ -185,34 +188,21 @@ nav a {
   -moz-transition: stroke-dasharray 0.7s linear 0s;
   -ms-transition: stroke-dasharray 0.7s linear 0s;
   -o-transition: stroke-dasharray 0.7s linear 0s;
-} */
+}
 
 .percentage-complete {
-  width: 2.938rem;
-  height: 2.438rem;
-  margin: 0.063rem 7.063rem 0 0.688rem;
-  font-family: Montserrat;
+  width: 40px;
+  height: 10px;
+  margin-bottom: 75%;
   font-size: 2rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #121212;
 }
 
 .state {
   width: 5rem;
   height: 1.125rem;
-  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
   opacity: 0.5;
-  font-family: Montserrat;
   font-size: 0.875rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #121212;
 }
 
@@ -221,6 +211,11 @@ nav a {
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+}
+
+.chapter {
+  font-size: 1rem;
+  font-weight: 300;
 }
 
 .input-form {
@@ -234,30 +229,49 @@ nav a {
 
 form {
   display: flex;
-  gap: 5%;
+  align-items: center;
+  gap: 2%;
   width: 100%;
 }
 
 form > input {
   font-size: 16px;
-}
-
-form > button,
-form > input {
-  width: 150px;
-  padding: 5px;
+  width: 70%;
+  padding: 2px 8px;
   border: 1px solid #dbdada;
 }
 
+form > select {
+  height: 40px;
+  width: 30%;
+  border: 1px solid #dbdada;
+
+  font-family: Montserrat;
+  font-size: 1rem;
+ 
+  letter-spacing: -0.15px;
+  color: var(--very-light-pink);
+}
+
+.add-button {
+  width: 20%;
+  height: 40px;
+  font-size: 0.813rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: 0.5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
 .input-title {
-    width: 41.5rem;
+  width: 50%;
   height: 2.813rem;
-  margin: 1.188rem 2.125rem 0 0;
-  padding: 0.813rem 35.688rem 0.813rem 1.063rem;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
-  background-color: #fff;
 }
+
 .input-author {
   display: none;
 }
@@ -266,18 +280,7 @@ form > input {
   background-color: transparent;
   color: #4386bf;
   height: 1.188rem;
-  font-family: RobotoSlab;
   font-size: 0.875rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal; 
 }
 
-.divider {
-  width: 0.125rem;
-  height: 1.5rem;
-  margin: 0.75rem 1.063rem 0 0.938rem;
-  border: solid 1px #e8e8e8;
-}

@@ -55,14 +55,14 @@ function ListofBooks() {
       </div>
 
       <div className="input-form">
-        <h1 className="Title grey">ADD NEW BOOK</h1>
+        <h1 className="Title grey" id="montserrat">ADD NEW BOOK</h1>
         <form onSubmit={handleSubmit}>
-          <input className="input-title" value={title} type="text" name="title" placeholder="Book title" onChange={(e) => dispatch(newTitle(e.target.value))} required />
-          <input className="input-author " value={author} type="text" name="author" placeholder="Author" onChange={(e) => dispatch(newAuthor(e.target.value))} required />
-          <select name="text" placeholder="Category">
-            <option value="category"> Category </option>
+          <input className="input-title" id="montserrat" value={title} type="text" name="title" placeholder="Book title" onChange={(e) => dispatch(newTitle(e.target.value))} required />
+          <input className="input-author" id="montserrat" value={author} type="text" name="author" placeholder="Author" onChange={(e) => dispatch(newAuthor(e.target.value))} required />
+          <select className="category-option" name="text" placeholder="Category">
+            <option value="category" id="montserrat"> Category </option>
           </select>
-          <button id="Add Button" type="button" onClick={handleSubmit}>ADD BOOK</button>
+          <button className="blue-buttons add-button" id="roboto" type="button" onClick={handleSubmit}>ADD BOOK</button>
         </form>
       </div>
 

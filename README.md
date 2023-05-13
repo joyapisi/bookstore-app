@@ -259,7 +259,7 @@ If you think that change is necessary - open a Pull Request in this repository a
 
 - GitHub: (https://github.com/joyapisi)
 - Twitter: (https://twitter.com/joyapisi)
-- LinkedIn: (https://http://www.linkedin.com/in/joy-phoebe-00b80a13a)
+- LinkedIn: (https://linkedin.com/in/joy-phoebe-00b80a13a)
 
 ## 🤝 Contributing <a name="contributing"></a>
 
