@@ -34,7 +34,7 @@ function ListofBooks() {
 
   return (
     <>
-      <div className="books-list">
+      <div className="books-list flex">
         {booksLoading}
         {errorMsg}
         <>
@@ -54,9 +54,9 @@ function ListofBooks() {
         </>
       </div>
 
-      <div className="input-form">
+      <div className="flex input-form">
         <h1 className="Title grey" id="montserrat">ADD NEW BOOK</h1>
-        <form onSubmit={handleSubmit}>
+        <form className="flex" onSubmit={handleSubmit}>
           <input className="input-title" id="montserrat" value={title} type="text" name="title" placeholder="Book title" onChange={(e) => dispatch(newTitle(e.target.value))} required />
           <input className="input-author" id="montserrat" value={author} type="text" name="author" placeholder="Author" onChange={(e) => dispatch(newAuthor(e.target.value))} required />
           <select className="category-option" name="text" placeholder="Category">

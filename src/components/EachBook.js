@@ -10,11 +10,11 @@ function EachBook({
   return (
     <>
       <section className="inner-container">
-        <div className="box each-book">
+        <div className="box flex each-book">
           <span className="category" id="montserrat">category</span>
           <span className="Title book-title" id="roboto">{book.title}</span>
           <span className="author" id="roboto">{book.author}</span>
-          <div className="buttons">
+          <div className="flex buttons">
             <button type="button">Comments</button>
             <span className="grey divider"> | </span>
             <button type="button" onClick={() => { dispatch(removeBook(id)); }}>Remove</button>
@@ -48,7 +48,7 @@ function EachBook({
           </div>
         </div>
 
-        <div className="box current-chapter">
+        <div className="box flex current-chapter">
           <h5 className="grey" id="roboto">CURRENT CHAPTER</h5>
           <h5 className="chapter" id="roboto">Chapter 17</h5>
           <button className="blue-buttons progress-btn" id="roboto" type="button">UPDATE PROGRESS</button>
