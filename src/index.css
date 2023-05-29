@@ -37,6 +37,7 @@ nav {
   align-items: center;
   border-bottom: 1px solid #dbdada;
   padding: 3px 30px;
+
   /* width: 100%; */
 }
 
@@ -45,6 +46,7 @@ nav {
   font-size: 1rem;
   font-weight: bold;
   color: #0290ff;
+
   /* margin-right: 50px; */
 }
 
@@ -66,20 +68,19 @@ nav a {
 }
 
 @media screen and (min-width: 768px) {
-  
   .logo {
     font-size: 25px;
   }
-  
+
   nav a {
     font-size: medium;
   }
-  
+
   .nav a:active,
   .nav a:focus {
     color: #3e92db;
   }
-  
+
   #icon {
     width: 2.813rem;
     height: 2.813rem;
@@ -93,7 +94,7 @@ nav a {
     margin: 20px 5px;
     padding: 5px 10px;
   }
-  
+
   .inner-container {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -102,26 +103,26 @@ nav a {
     padding: 20px;
     justify-content: center;
   }
-  
+
   .box {
     padding: 5px 15px;
     align-items: center;
   }
-  
+
   .grey {
     color: #888;
   }
-  
+
   .flex {
     display: flex;
   }
-  
+
   .each-book {
     flex-direction: column;
     align-items: flex-start;
     gap: 2px;
   }
-  
+
   .category {
     width: 7rem;
     height: 25px;
@@ -131,19 +132,19 @@ nav a {
     color: #121212;
     border: none;
   }
-  
+
   .Title {
     font-size: 1.375rem;
     font-weight: bold;
     letter-spacing: -0.2px;
   }
-  
+
   .book-title {
     color: #121212;
     width: 22.813rem;
     height: 1.813rem;
   }
-  
+
   .author {
     width: 5.813rem;
     height: 1.188rem;
@@ -151,14 +152,14 @@ nav a {
     font-weight: 300;
     color: #4386bf;
   }
-  
+
   .buttons {
     justify-content: space-between;
     gap: 15px;
     width: 60%;
     margin-top: 15px;
   }
-  
+
   .progress-btn {
     width: 11.5rem;
     height: 2.063rem;
@@ -168,27 +169,28 @@ nav a {
     letter-spacing: 0.5px;
     margin-top: 20px;
   }
-  
+
   .divider {
     width: 0.125rem;
     height: 1.5rem;
     border: solid 1px #e8e8e8;
   }
-  
+
   .bookmark {
     display: grid;
     grid-template-columns: 2fr 1fr;
+
     /* grid-template-columns: repeat(2, minmax(2fr, 1fr)); */
     gap: 2%;
   }
-  
+
   .circular-chart {
     display: block;
     margin: 10px auto;
     max-width: 80%;
     max-height: 250px;
   }
-  
+
   .circle-bg {
     fill: none;
     stroke: #cacaca;
@@ -201,24 +203,23 @@ nav a {
     stroke-linecap: round;
     animation: progress 1s ease-out forwards;
   }
-  
+
   @keyframes progress {
     0% {
       stroke-dasharray: 0 100;
     }
   }
 
-    
   .circular-chart.blue .circle {
     stroke: #3c9ee5;
   }
-  
+
   .percentage-complete {
     width: 20px;
     height: 10px;
     color: #121212;
   }
-  
+
   .state {
     width: 5px;
     height: 1.125rem;
@@ -226,18 +227,18 @@ nav a {
     font-size: 0.875rem;
     color: #121212;
   }
-  
+
   .current-chapter {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
-  
+
   .chapter {
     font-size: 1rem;
     font-weight: 300;
   }
-  
+
   .input-form {
     flex-direction: column;
     margin: 15px 10px;
@@ -245,20 +246,20 @@ nav a {
     gap: 5px;
     border-top: 1px solid #dbdada;
   }
-  
+
   form {
     align-items: center;
     gap: 2%;
     width: 100%;
   }
-  
+
   form > input {
     font-size: 16px;
     width: 70%;
     padding: 2px 8px;
     border: 1px solid #dbdada;
   }
-  
+
   form > select {
     height: 40px;
     width: 30%;
@@ -267,7 +268,7 @@ nav a {
     letter-spacing: -0.15px;
     color: var(--very-light-pink);
   }
-  
+
   .add-button {
     width: 20%;
     height: 40px;
@@ -279,18 +280,18 @@ nav a {
     padding: 5px 10px;
     border-radius: 3px;
   }
-  
+
   .input-title {
     width: 50%;
     height: 2.813rem;
     border-radius: 4px;
     border: solid 1px #e8e8e8;
   }
-  
+
   .input-author {
     display: none;
   }
-  
+
   .buttons > button {
     background-color: transparent;
     color: #4386bf;
@@ -298,5 +299,4 @@ nav a {
     font-size: 0.875rem;
     font-weight: 300;
   }
-  
 }
