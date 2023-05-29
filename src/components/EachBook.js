@@ -25,25 +25,25 @@ function EachBook({
 
         <div className="box bookmark">
 
-          <svg
-            className="bookmark-progress"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              className="bookmark-progress-gray"
-              cx="111"
-              cy="100"
-              r="44"
+          <svg viewBox="0 0 36 36" className="circular-chart blue">
+            <path
+              className="circle-bg"
+              strokeDasharray="60, 100"
+              d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"
             />
-            <circle
-              className="bookmark-progress-blue"
-              cx="111"
-              cy="100"
-              r="44"
+            <path
+              className="circle"
+              strokeDasharray="90, 100"
+              d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
             />
           </svg>
+
           <div className="percentage-complete" id="montserrat">
-            <h2 className="percent">64%</h2>
+            <h2 className="percent">90%</h2>
             <p className="state">Completed</p>
           </div>
         </div>

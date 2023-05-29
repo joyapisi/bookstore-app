@@ -37,13 +37,15 @@ nav {
   align-items: center;
   border-bottom: 1px solid #dbdada;
   padding: 3px 30px;
+  /* width: 100%; */
 }
 
 .logo {
-  width: 30%;
-  font-size: 0.875rem;
+  width: 45%;
+  font-size: 1rem;
   font-weight: bold;
   color: #0290ff;
+  /* margin-right: 50px; */
 }
 
 nav a {
@@ -66,7 +68,7 @@ nav a {
 @media screen and (min-width: 768px) {
   
   .logo {
-    font-size: 1.875rem;
+    font-size: 25px;
   }
   
   nav a {
@@ -81,7 +83,7 @@ nav a {
   #icon {
     width: 2.813rem;
     height: 2.813rem;
-    margin-left: 55%;
+    margin-left: 45%;
   }
 
   .books-list {
@@ -96,7 +98,7 @@ nav a {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
-    border: 1px solid #dbdada;
+    border: 1px solid #eeecec;
     padding: 20px;
     justify-content: center;
   }
@@ -175,46 +177,50 @@ nav a {
   
   .bookmark {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 2fr 1fr;
+    /* grid-template-columns: repeat(2, minmax(2fr, 1fr)); */
     gap: 2%;
   }
   
-  .bookmark-progress {
-    transform: rotate(-90deg);
-    width: 10.25rem;
-    height: 10.25rem;
-    margin: 0;
+  .circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+    max-height: 250px;
   }
   
-  .bookmark-progress-gray {
+  .circle-bg {
     fill: none;
-    stroke: #dbdada;
-    stroke-width: 6px;
+    stroke: #cacaca;
+    stroke-width: 3.8;
+  }
+
+  .circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
   }
   
-  .bookmark-progress-blue {
-    fill: none;
-    stroke: #3e92db;
-    stroke-width: 6px;
-    stroke-dasharray: 177, 277;
-    stroke-dashoffset: 0;
-    transition: stroke-dasharray 0.7s linear 0s;
-    -webkit-transition: stroke-dasharray 0.7s linear 0s;
-    -moz-transition: stroke-dasharray 0.7s linear 0s;
-    -ms-transition: stroke-dasharray 0.7s linear 0s;
-    -o-transition: stroke-dasharray 0.7s linear 0s;
+  @keyframes progress {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+  }
+
+    
+  .circular-chart.blue .circle {
+    stroke: #3c9ee5;
   }
   
   .percentage-complete {
-    width: 40px;
+    width: 20px;
     height: 10px;
-    margin-bottom: 75%;
-    font-size: 2rem;
     color: #121212;
   }
   
   .state {
-    width: 5rem;
+    width: 5px;
     height: 1.125rem;
     opacity: 0.5;
     font-size: 0.875rem;
